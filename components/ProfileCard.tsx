@@ -5,6 +5,7 @@ import MediaIcons from "./MediaIcons"
 import MyLink from "./MyLink"
 import Slide from "./Slide"
 import Typing from "./Typing"
+import Image from 'next/image'
 
 interface Props {
   profileData: ProfileData
@@ -17,8 +18,10 @@ export default function ProfileCard({ profileData }: Props) {
         <Slide images={profileData.bgImages} />
 
         <div className="relative z-20 w-56 h-56 mx-auto -mt-36 rounded-full profilePic">
-          <img
+          <Image
             src={profileData.ownersPhoto.url}
+            layout="fill"
+            priority
             alt="userPic"
             className="w-full h-full block p-0 z-20 relative object-cover rounded-full border-4 border-[#1c1b1b] border-solid"
           />
@@ -41,7 +44,7 @@ export default function ProfileCard({ profileData }: Props) {
           <MyLink
             name="my linkedin"
             Icon={AiFillLinkedin}
-            url="https://www.linkedin.com"
+            url={`${profileData.cv}`}
           />
         </div>
       </div>

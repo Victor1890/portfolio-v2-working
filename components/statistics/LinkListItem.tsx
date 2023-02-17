@@ -25,6 +25,7 @@ export default function LinkListItem({ socialMedia }: Props) {
           target="_blank"
           rel="noreferrer"
           className="text-2xl font-semibold text-white transition-all duration-300 hover:text-main-orange"
+          aria-label={socialMedia.info}
         >
           {socialMedia.label}
         </a>

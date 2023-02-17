@@ -59,13 +59,14 @@ export default function SideMenuLb({ sideMenu, showMenu, profile }: Props) {
           </div>
 
           <div className="flex gap-x-5 items-center justify-center">
-            {socialMedia.map(({ id, Icon, label, mediaUrl }) => (
+            {socialMedia.map(({ id, Icon, label, mediaUrl, info }) => (
               <a
                 rel="noreferrer"
                 href={mediaUrl}
                 className="tooltip tooltip-bottom"
                 data-tip={label}
                 key={id}
+                aria-label={info}
               >
                 <Icon className="text-gray-400 text-2xl transition-all duration-300 hover:text-main-orange" />
               </a>

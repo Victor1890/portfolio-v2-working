@@ -16,7 +16,7 @@ export default function DevBlogs() {
     isError,
     reFetch,
   } = useFetch<blog[]>(
-    `https://dev.to/api/articles?username=arafat4693&per_page=${postsPerPage}&page=${currentPage}`
+    `https://dev.to/api/articles?username=victor1890&per_page=${postsPerPage}&page=${currentPage}`
   )
 
   if (isError) {

@@ -28,6 +28,7 @@ import Works from "./components/worksPage/Works"
 import {
   ClientData,
   MenuData,
+  SeoData,
   ServiceData,
   SocialMedia,
   StatisticsData,
@@ -85,23 +86,15 @@ export const socialMedia: SocialMedia[] = [
     Icon: FaDev,
     label: "Dev",
     logoColor: "black",
-    mediaUrl: "https://www.dev.to/arafat4693",
+    mediaUrl: "https://dev.to/victor1890",
     info: "Follow me and read my articles on Dev.to",
-  },
-  {
-    id: 2,
-    Icon: FaFacebookF,
-    label: "Facebook",
-    logoColor: "#3b5998",
-    mediaUrl: "https://www.facebook.com/md.sunny.58910049",
-    info: "Follow me on Facebook",
   },
   {
     id: 3,
     Icon: AiOutlineGithub,
     label: "Github",
     logoColor: "#171515",
-    mediaUrl: "https://www.github.com/arafat4693",
+    mediaUrl: "https://github.com/Victor1890",
     info: "Star my projects on Github",
   },
   {
@@ -109,25 +102,25 @@ export const socialMedia: SocialMedia[] = [
     Icon: AiFillLinkedin,
     label: "Linkedin",
     logoColor: "#0072b1",
-    mediaUrl: "https://www.linkedin.com",
+    mediaUrl: "https://www.linkedin.com/in/victor-j-rosario-v/?locale=en_US",
     info: "Let's connect on Linkedin",
   },
-  {
-    id: 5,
-    Icon: FaDiscord,
-    label: "Discord",
-    logoColor: "#5865f2",
-    mediaUrl: "https://www.discord.com",
-    info: "Let's chat on Discord. My username - Tyrant#4185",
-  },
-  {
-    id: 6,
-    Icon: SiFiverr,
-    label: "Fiverr",
-    logoColor: "#00b22d",
-    mediaUrl: "https://www.fiverr.com/sunnyislam990",
-    info: "Hire me on fiverr as freelancer",
-  },
+  // {
+  //   id: 5,
+  //   Icon: FaDiscord,
+  //   label: "Discord",
+  //   logoColor: "#5865f2",
+  //   mediaUrl: "https://www.discord.com",
+  //   info: "Let's chat on Discord. My username - Tyrant#4185",
+  // },
+  // {
+  //   id: 6,
+  //   Icon: SiFiverr,
+  //   label: "Fiverr",
+  //   logoColor: "#00b22d",
+  //   mediaUrl: "https://www.fiverr.com/sunnyislam990",
+  //   info: "Hire me on fiverr as freelancer",
+  // },
 ]
 
 export const services: ServiceData[] = [
@@ -143,21 +136,7 @@ export const services: ServiceData[] = [
     title: "Back-end",
     Icon: SiNodedotjs,
     description:
-      "Back-end with a NoSQL DB and API written in a standard express router or tRPC.",
-  },
-  {
-    id: 3,
-    title: "UI/UX design",
-    Icon: SiFigma,
-    description:
-      "Modern user Interface trends with a highly professional and unique design.",
-  },
-  {
-    id: 4,
-    title: "Firebase",
-    Icon: SiFirebase,
-    description:
-      "Fully functional firebase app with authentication, firestore, storage, etc.",
+      "Back-end with a SQL and NoSQL DB and API written in a standard express router or tRPC.",
   },
 ]
 
@@ -207,3 +186,25 @@ export const statisticsData: StatisticsData[] = [
     info: "40+",
   },
 ]
+
+export const SEO: SeoData = {
+  title: "",
+  meta: [
+    {
+      name: "og:title",
+      content: "Victor Rosario | Full-stack developer",
+    },
+    {
+      name: "description",
+      content: "A Technologist, I graduated from the Technological Institute of the Americas (ITLA) currently I work as a FullStack Developer, making use of different software such as JavaScript, TypeScript, Node.js, PL / SQL, API REST, blockchain technologies, Redis, Docker, WebSocket, Socket.io and more.",
+    },
+    {
+      property: "og:description",
+      content: "A Technologist, I graduated from the Technological Institute of the Americas (ITLA) currently I work as a FullStack Developer, making use of different software such as JavaScript, TypeScript, Node.js, PL / SQL, API REST, blockchain technologies, Redis, Docker, WebSocket, Socket.io and more.",
+    },
+    {
+      property: "og:type",
+      content: "website",
+    },
+  ]
+}

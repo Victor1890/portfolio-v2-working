@@ -1,27 +1,33 @@
 import Particles from "react-tsparticles"
 import { loadFull } from "tsparticles"
 import { useCallback } from "react"
-import type { Engine, Container } from "tsparticles-engine"
+import type { Engine } from "tsparticles-engine"
+
+enum HoverParticleMode {
+  attract = "attract",
+  bounce = "bounce",
+  bubble = "bubble",
+  connect = "connect",
+  grab = "grab",
+  light = "light",
+  repulse = "repulse",
+  slow = "slow",
+  trail = "trail"
+}
 
 const Background = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine)
   }, [])
 
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {
-      // await console.log(container)
-    },
-    []
-  )
-
   return (
     <Particles
       id="tsparticles"
       init={particlesInit}
-      loaded={particlesLoaded}
       options={{
         background: {
+          repeat: "no-repeat",
+          size: "cover",
           color: {
             value: "#0b0f17",
           },
@@ -34,7 +40,7 @@ const Background = () => {
             },
             onHover: {
               enable: true,
-              mode: "repulse",
+              mode: HoverParticleMode.repulse,
             },
             resize: true,
           },

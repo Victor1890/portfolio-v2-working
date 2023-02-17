@@ -8,6 +8,17 @@ interface ProfileData {
   bgImages: { url: string }[]
 }
 
+interface SeoData {
+  title: string
+  meta: MetaSeoData[]
+}
+
+interface MetaSeoData {
+  name?: string,
+  property?: string
+  content: string
+}
+
 interface partOfProfile {
   name: string
   ownersPhoto: { url: string }

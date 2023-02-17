@@ -15,11 +15,11 @@ export default function About() {
       <Title name="my services" />
       <MyServices />
 
-      <Title name="pricing" />
-      <Prices />
+      {/* <Title name="pricing" />
+      <Prices /> */}
 
-      <Title name="clients" />
-      <BrandLogos />
+      {/* <Title name="clients" />
+      <BrandLogos /> */}
 
       <Title name="testimonials" />
       <Testimonials />

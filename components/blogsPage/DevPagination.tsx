@@ -38,7 +38,7 @@ export default function DevPagination({
   function changePage(nextPage: number) {
     setCurrentPage(nextPage)
     onLoadMore(
-      `https://dev.to/api/articles?username=arafat4693&per_page=${postsPerPage}&page=${nextPage}`
+      `https://dev.to/api/articles?username=victor1890&per_page=${postsPerPage}&page=${nextPage}`
     )
   }
 

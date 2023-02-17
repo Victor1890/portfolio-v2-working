@@ -4,6 +4,10 @@ import { ApolloProvider } from "@apollo/client"
 import client from "../apollo-client"
 import Script from "next/script"
 
+export function reportWebVitals(metric: any) {
+  console.log(metric)
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>

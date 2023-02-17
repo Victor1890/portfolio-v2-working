@@ -4,6 +4,7 @@ import profileOperations from "../../graphqlOperations/profile"
 import AboutMeSkeleton from "./AboutMeSkeleton"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import { calculateAge } from "../../helpers/calculate-age.helper"
 
 interface GetUserBio {
   profiles: [{ bio: string }]
@@ -15,7 +16,7 @@ export default function AboutMe() {
   )
 
   if (error) {
-    console.log(error)
+    console.error({ error })
     return <AboutMeSkeleton />
   }
 
@@ -30,10 +31,10 @@ export default function AboutMe() {
       </article>
 
       <ul className="location grid grid-cols-1 sm:grid-cols-2 mt-6 gap-y-2">
-        <MyInfo field="age" value="20" />
-        <MyInfo field="residence" value="Sweden" />
+        <MyInfo field="age" value={`${calculateAge(new Date(1999, 6))}`} />
+        <MyInfo field="residence" value="Dominican Republic" />
         <MyInfo field="freelance" value="Available" />
-        <MyInfo field="address" value="Stockholm, Sweden" />
+        <MyInfo field="address" value="National District, Dominican Republic" />
       </ul>
     </div>
   )

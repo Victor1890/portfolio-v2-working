@@ -48,12 +48,12 @@ export default function Stats() {
         <Statistic
           title="articles"
           info={totalArticles}
-          externalLink="https://dev.to/arafat4693"
+          externalLink="https://dev.to/victor1890"
         />
         <Statistic
           title="total reactions"
           info={articleReactions}
-          externalLink="https://dev.to/arafat4693"
+          externalLink="https://dev.to/victor1890"
         />
         {statisticsData.map((s, i) => (
           <Statistic key={i} title={s.title} info={s.info} />
