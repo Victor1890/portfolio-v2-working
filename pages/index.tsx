@@ -34,7 +34,7 @@ const Home: NextPage<Props> = ({ profileData }) => {
   const [previousTitle, setPreviousTitle] = useState<string>('')
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => setLoaderPage(false), 3500)
+    const timeoutId = setTimeout(() => setLoaderPage(false), 1000)
     return () => {
       clearTimeout(timeoutId)
     }

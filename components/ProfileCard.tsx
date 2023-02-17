@@ -22,7 +22,7 @@ export default function ProfileCard({ profileData }: Props) {
             src={profileData.ownersPhoto.url}
             layout="fill"
             priority
-            alt="userPic"
+            alt={profileData.name}
             className="w-full h-full block p-0 z-20 relative object-cover rounded-full border-4 border-[#1c1b1b] border-solid"
           />
         </div>
