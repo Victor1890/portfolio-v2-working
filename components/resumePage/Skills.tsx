@@ -17,7 +17,7 @@ export default function Skills() {
     resumeOperations.Queries.getSkills
   )
 
-  if (error) console.log(error)
+  if (error) console.error({error})
 
   return (
     <>

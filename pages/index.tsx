@@ -31,7 +31,6 @@ const Home: NextPage<Props> = ({ profileData }) => {
   const workId = useReactiveVar(currentWork)
   const sideMenu = useReactiveVar(showMenu)
   const [loaderPage, setLoaderPage] = useState<boolean>(true)
-  const [previousTitle, setPreviousTitle] = useState<string>('')
 
   useEffect(() => {
     const timeoutId = setTimeout(() => setLoaderPage(false), 1000)
@@ -39,19 +38,6 @@ const Home: NextPage<Props> = ({ profileData }) => {
       clearTimeout(timeoutId)
     }
   }, [setLoaderPage])
-
-  useEffect(() => {
-
-    window.addEventListener('blur', () => {
-      setPreviousTitle(document.title)
-      document.title = "Don't go 😢, come back!"
-    });
-
-    window.addEventListener('focus', () => {
-      document.title = previousTitle;
-    });
-
-  }, [previousTitle])
 
   return (
     <main className="relative flex items-center justify-center min-h-screen home">

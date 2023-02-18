@@ -7,15 +7,11 @@ const propertyId = process.env.NEXT_PUBLIC_GA_PROPERTY_ID
 const analyticsDataClient = new BetaAnalyticsDataClient({
   credentials: {
     client_email: process.env.NEXT_PUBLIC_GA_CLIENT_EMAIL,
-    private_key: process.env.NEXT_PUBLIC_GA_PRIVATE_KEY?.replace(/\n/gm, "\n"), // replacing is necessary
-    // private_key: pk.replace(/\n/gm, "\n"), // replacing is necessary
+    private_key: process.env.NEXT_PUBLIC_GA_PRIVATE_KEY?.replace(/\n/gm, "\n"),
   },
 })
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(_: NextApiRequest, res: NextApiResponse) {
   const [response] = await analyticsDataClient.runReport({
     property: `properties/${propertyId}`,
     dateRanges: [
@@ -34,12 +30,12 @@ export default async function handler(
         name: "activeUsers", // it returs the active users
       },
     ],
-  })
+  });
 
-  let totalVisitors = 0
+  let totalVisitors = 0;
   response.rows?.forEach((row: any) => {
     totalVisitors += parseInt(row.metricValues[0].value)
-  })
+  });
 
-  res.status(200).json(totalVisitors)
+  return res.status(200).json(totalVisitors);
 }

@@ -1,5 +1,6 @@
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin')
+const { resolve } = require("path")
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -18,9 +19,9 @@ const nextConfig = {
     localeDetection: false
   },
   compiler: {
-    removeConsole: {
-      exclude: ['error'],
-    },
+    // removeConsole: {
+    //   exclude: ['error'],
+    // },
   },
   webpack: (config, { isServer }) => {
     
@@ -30,6 +31,12 @@ const nextConfig = {
     if(!isProduction) return config;
 
     config.plugins.push(new DuplicatePackageCheckerPlugin());
+
+    config.resolve.alias['fast-deep-equal'] = resolve(
+      __dirname,
+      'node_modules',
+      'fast-deep-equal'
+    )
 
     config.optimization.minimizer.push(new OptimizeCSSAssetsPlugin({}));
 
