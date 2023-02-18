@@ -1,12 +1,15 @@
 module.exports = {
     ci: {
         collect: {
-            startServerCommand: "npm run start",
+            startServerCommand: "npm run build && npm run start",
+            startServerReadyPattern: "ready on",
             numberOfRuns: 1,
             url: [
                 "http://localhost:3000"
             ],
-            // chromePath: "/usr/bin/google-chr"
+            settings: {
+                preset: "desktop"
+            },
         },
         asserts: {
             assertions: {
@@ -19,5 +22,6 @@ module.exports = {
         upload: {
             target: "temporary-public-storage"
         },
+        server: {}
     }
 }

@@ -18,6 +18,4 @@ jobs:
       - run: lhci upload
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-        # run: |
-        #   lhci autorun --config=/.lighthouserc-cli.js
   
