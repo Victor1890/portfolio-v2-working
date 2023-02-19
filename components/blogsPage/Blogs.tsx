@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client"
 import Title from "../Title"
 import Blog from "./Blog"
-import BlogSkeleton from "./BlogSkeleton"
+import BlogSkeleton from "../skeleton/BlogSkeleton"
 import Pagination from "./Pagination"
 import blogOperations from "../../graphqlOperations/blog"
 import { BlogsQuery } from "../../types"

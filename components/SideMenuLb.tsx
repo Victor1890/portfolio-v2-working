@@ -1,18 +1,13 @@
-import { ReactiveVar, useQuery, useReactiveVar } from "@apollo/client"
+import { ReactiveVar, useReactiveVar } from "@apollo/client"
 import Image from "next/image"
 import {
-  Dispatch,
-  SetStateAction,
   MouseEvent,
-  useState,
-  useEffect,
 } from "react"
 import { IoMdClose } from "react-icons/io"
-import { menus, socialMedia } from "../data"
-import SideMenuBtn from "./SideMenuBtn"
-import profileOperations from "../graphqlOperations/profile"
-import { partOfProfile, ProfileData } from "../types"
 import { currentMenu } from "../apollo-client"
+import { menus, socialMedia } from "../data"
+import { ProfileData } from "../types"
+import SideMenuBtn from "./SideMenuBtn"
 
 interface Props {
   sideMenu: boolean
@@ -98,7 +93,7 @@ export default function SideMenuLb({ sideMenu, showMenu, profile }: Props) {
           </a>
 
           <p className="text-center text-gray-500 text-xl mt-16 mb-10">
-            {"sunny's"} portfolio © 2022.
+            {"sunny's"} portfolio © 2023.
           </p>
         </div>
       </main>

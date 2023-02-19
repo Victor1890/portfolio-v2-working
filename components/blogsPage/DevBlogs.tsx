@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useFetch } from "../../hooks/useFetch"
 import { blog } from "../../types"
 import Title from "../Title"
-import BlogSkeleton from "./BlogSkeleton"
+import BlogSkeleton from "../skeleton/BlogSkeleton"
 import DevBlog from "./DevBlog"
 import DevPagination from "./DevPagination"
 

@@ -27,15 +27,10 @@ export default function Stats() {
         fetchData("/api/analytics/traffics"),
       ])
 
-      apiData[0].status === "fulfilled" &&
-        typeof apiData[0].value === "number" &&
-        setTotalArticles(apiData[0].value)
-      apiData[1].status === "fulfilled" &&
-        typeof apiData[1].value === "number" &&
-        setArticleReactions(apiData[1].value)
-      apiData[2].status === "fulfilled" &&
-        typeof apiData[2].value === "number" &&
-        setPageViews(apiData[2].value)
+      if(apiData[0].status === 'fulfilled') setTotalArticles(Number(`${apiData[0].value || 0}`))
+      if(apiData[1].status === 'fulfilled') setArticleReactions(Number(`${apiData[1].value || 0}`))
+      if(apiData[2].status === 'fulfilled') setPageViews(Number(`${apiData[2].value || 0}`))
+
     }
     fetchApiData()
   }, [])

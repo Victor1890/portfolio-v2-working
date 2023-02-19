@@ -1,6 +1,5 @@
 import { BsCheckLg } from "react-icons/bs"
-import { FieldValueData } from "../../types"
-import KnowledgeSkeleton from "./KnowledgeSkeleton"
+import KnowledgeSkeleton from "../skeleton/KnowledgeSkeleton"
 
 interface Props {
   knowledge: string[] | undefined

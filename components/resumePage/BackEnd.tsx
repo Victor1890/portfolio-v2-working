@@ -1,5 +1,5 @@
 import { FieldValueData } from "../../types"
-import BackEndSkeleton from "./BackEndSkeleton"
+import BackEndSkeleton from "../skeleton/BackEndSkeleton"
 
 interface Props {
   backend: FieldValueData[] | undefined
@@ -24,10 +24,9 @@ export default function BackEnd({ backend }: Props) {
         ))
       ) : (
         <>
-          <BackEndSkeleton />
-          <BackEndSkeleton />
-          <BackEndSkeleton />
-          <BackEndSkeleton />
+          {new Array(4).fill(0).map((idx) => (
+            <BackEndSkeleton key={idx}/>
+          ))}
         </>
       )}
     </div>

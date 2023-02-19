@@ -1,6 +1,5 @@
 import Price from "./Price"
-import { FaReact } from "react-icons/fa"
-import PriceSkeleton from "./PriceSkeleton"
+import PriceSkeleton from "../skeleton/PriceSkeleton"
 import { useQuery } from "@apollo/client"
 import profileOperations from "../../graphqlOperations/profile"
 import { PriceData } from "../../types"

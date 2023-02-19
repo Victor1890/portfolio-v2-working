@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { BiChevronRight } from "react-icons/bi"
 import { ExperienceData } from "../../types"
 
 interface Props {
@@ -30,7 +29,7 @@ export default function ResumeItem({ resume, border }: Props) {
         {resume.logo && (
           <Image
             src={resume.logo.url}
-            alt="linkedin"
+            alt={resume.title}
             width={100}
             height={27}
             objectFit="contain"

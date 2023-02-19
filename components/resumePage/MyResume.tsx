@@ -1,7 +1,7 @@
 import IconTitle from "./IconTitle"
 import ResumeItem from "./ResumeItem"
 import { FaGraduationCap, FaNetworkWired } from "react-icons/fa"
-import ResumeSkeleton from "./ResumeSkeleton"
+import ResumeSkeleton from "../skeleton/ResumeSkeleton"
 import resumeOperations from "../../graphqlOperations/resume"
 import { ExperienceData } from "../../types"
 import { useQuery } from "@apollo/client"
@@ -11,25 +11,33 @@ interface ExperienceQuery {
   resumes: ExperienceData[]
 }
 
+interface FilteredDataI {
+  experience: ExperienceData[]
+  education: ExperienceData[]
+}
+
 export default function MyResume() {
   const { data, error } = useQuery<ExperienceQuery>(
     resumeOperations.Queries.getExperience
   )
 
-  const filteredData = useMemo<
-    [ExperienceData[], ExperienceData[]] | undefined
-  >(() => {
-    if (data === undefined) return undefined
-    const experience: ExperienceData[] = []
-    const education: ExperienceData[] = []
+  const filteredData = useMemo<FilteredDataI | undefined>(() => {
+    
+    if (data === undefined) return undefined;
+    
+    const experience: ExperienceData[] = [];
+    const education: ExperienceData[] = [];
+
     data.resumes.forEach((r) => {
-      if (r.experience) {
-        experience.push(r)
-      } else {
-        education.push(r)
-      }
+      if (r.experience) experience.push(r);
+      else education.push(r);
     })
-    return [experience, education]
+
+    return {
+       education,
+       experience
+    }
+
   }, [data])
 
   if (error) console.log(error)
@@ -46,11 +54,11 @@ export default function MyResume() {
             <ResumeSkeleton />
           </>
         ) : (
-          filteredData[0].map((r, idx) => (
+          filteredData.experience.map((r, idx) => (
             <ResumeItem
               key={r.id}
               resume={r}
-              border={idx !== filteredData[0].length - 1}
+              border={idx !== filteredData.experience.length - 1}
             />
           ))
         )}
@@ -66,11 +74,11 @@ export default function MyResume() {
             <ResumeSkeleton />
           </>
         ) : (
-          filteredData[1].map((r, idx) => (
+          filteredData.education.map((r, idx) => (
             <ResumeItem
               key={r.id}
               resume={r}
-              border={idx !== filteredData[1].length - 1}
+              border={idx !== filteredData.education.length - 1}
             />
           ))
         )}

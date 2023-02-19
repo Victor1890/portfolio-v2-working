@@ -24,13 +24,6 @@ interface partOfProfile {
   ownersPhoto: { url: string }
 }
 
-interface ServiceData {
-  id: number
-  title: string
-  Icon: IconType
-  description: string
-}
-
 interface PriceData {
   id: string
   packageName: string
@@ -68,6 +61,13 @@ interface ExperienceData {
   subTitle: string
   title: string
   logo: { url: string }
+}
+
+interface ServiceDataI {
+  id: string
+  title: string
+  desc: string
+  type: string
 }
 
 interface SkillData {

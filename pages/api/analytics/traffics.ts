@@ -32,6 +32,8 @@ export default async function handler(_: NextApiRequest, res: NextApiResponse) {
     ],
   });
 
+  console.log(response)
+
   let totalVisitors = 0;
   response.rows?.forEach((row: any) => {
     totalVisitors += parseInt(row.metricValues[0].value)

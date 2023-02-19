@@ -39,6 +39,7 @@ export default function LinkListItem({ socialMedia }: Props) {
         rel="noreferrer"
         href={socialMedia.mediaUrl}
         className={`absolute flex items-center justify-center w-12 h-12 transition-all duration-200 bg-gray-900 rounded-full opacity-0 cursor-pointer -top-2 -right-3 group-hover:opacity-100`}
+        aria-label={socialMedia.info}
       >
         <BiLinkExternal className="text-3xl text-white" />
       </a>

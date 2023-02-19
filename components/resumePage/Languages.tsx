@@ -1,5 +1,5 @@
 import { FieldValueData } from "../../types"
-import LanguageSkeleton from "./LanguageSkeleton"
+import LanguageSkeleton from "../skeleton/LanguageSkeleton"
 
 interface Props {
   languages: FieldValueData[] | undefined

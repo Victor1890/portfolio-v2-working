@@ -1,24 +1,14 @@
 import { AiFillLinkedin, AiOutlineGithub } from "react-icons/ai"
 import {
   FaDev,
-  FaDiscord,
   FaEye,
-  FaFacebookF,
   FaRegListAlt,
   FaRegNewspaper,
-  FaRegUser,
+  FaRegUser
 } from "react-icons/fa"
 import { FiSend } from "react-icons/fi"
 import { MdComputer, MdDashboard } from "react-icons/md"
-import {
-  SiFigma,
-  SiFirebase,
-  SiFiverr,
-  SiNextdotjs,
-  SiNodedotjs,
-} from "react-icons/si"
 import About from "./components/aboutPage/About"
-import Blogs from "./components/blogsPage/Blogs"
 import DevBlogs from "./components/blogsPage/DevBlogs"
 import Contact from "./components/contactPage/Contact"
 import GuestBook from "./components/guestbookPage/GuestBook"
@@ -29,7 +19,6 @@ import {
   ClientData,
   MenuData,
   SeoData,
-  ServiceData,
   SocialMedia,
   StatisticsData,
   TestimonialData,
@@ -104,39 +93,6 @@ export const socialMedia: SocialMedia[] = [
     logoColor: "#0072b1",
     mediaUrl: "https://www.linkedin.com/in/victor-j-rosario-v/?locale=en_US",
     info: "Let's connect on Linkedin",
-  },
-  // {
-  //   id: 5,
-  //   Icon: FaDiscord,
-  //   label: "Discord",
-  //   logoColor: "#5865f2",
-  //   mediaUrl: "https://www.discord.com",
-  //   info: "Let's chat on Discord. My username - Tyrant#4185",
-  // },
-  // {
-  //   id: 6,
-  //   Icon: SiFiverr,
-  //   label: "Fiverr",
-  //   logoColor: "#00b22d",
-  //   mediaUrl: "https://www.fiverr.com/sunnyislam990",
-  //   info: "Hire me on fiverr as freelancer",
-  // },
-]
-
-export const services: ServiceData[] = [
-  {
-    id: 1,
-    title: "Front-end",
-    Icon: SiNextdotjs,
-    description:
-      "Modern and mobile-ready website that will help you reach all of your marketing.",
-  },
-  {
-    id: 2,
-    title: "Back-end",
-    Icon: SiNodedotjs,
-    description:
-      "Back-end with a SQL and NoSQL DB and API written in a standard express router or tRPC.",
   },
 ]
 

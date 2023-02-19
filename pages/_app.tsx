@@ -6,10 +6,6 @@ import Script from "next/script"
 import { useEffect } from "react"
 import { useChangeTitle } from "../hooks/useChangeTitle"
 
-export function reportWebVitals(metric: any) {
-  console.log(metric)
-}
-
 function MyApp({ Component, pageProps }: AppProps) {
 
   const { originalTitle, setOriginalTitle } = useChangeTitle("😭 PLEASE COME BACK!!")
