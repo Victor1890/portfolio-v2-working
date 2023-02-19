@@ -18,14 +18,15 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ApolloProvider client={client}>
       <Script
         strategy="lazyOnload"
-        src="https://www.googletagmanager.com/gtag/js?id=G-KJF12P63GL"
+        src="https://www.googletagmanager.com/gtag/js?id=G-JP4MXHY2Q7"
       />
       <Script id="google-analytics" strategy="lazyOnload">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-KJF12P63GL');
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-JP4MXHY2Q7');
         `}
       </Script>
 
