@@ -3,6 +3,7 @@ import { BetaAnalyticsDataClient } from "@google-analytics/data"
 
 // 👇 Setting PropertyId
 const propertyId = process.env.NEXT_PUBLIC_GA_PROPERTY_ID
+const DAYS = 30;
 
 const analyticsDataClient = new BetaAnalyticsDataClient({
   credentials: {
@@ -12,11 +13,12 @@ const analyticsDataClient = new BetaAnalyticsDataClient({
 })
 
 export default async function handler(_: NextApiRequest, res: NextApiResponse) {
+
   const [response] = await analyticsDataClient.runReport({
     property: `properties/${propertyId}`,
     dateRanges: [
       {
-        startDate: `30daysAgo`, //👈  e.g. "7daysAgo" or "30daysAgo"
+        startDate: `${DAYS}daysAgo`, //👈  e.g. "7daysAgo" or "30daysAgo"
         endDate: "today",
       },
     ],
@@ -32,12 +34,12 @@ export default async function handler(_: NextApiRequest, res: NextApiResponse) {
     ],
   });
 
-  console.log(response)
+  const totalVisitors = response.rows?.reduce((acc: number, row: any) => acc += parseInt(row.metricValues[0].value), 0) || 0;
 
-  let totalVisitors = 0;
-  response.rows?.forEach((row: any) => {
-    totalVisitors += parseInt(row.metricValues[0].value)
-  });
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=43200, stale-while-revalidate=21600"
+  );
 
   return res.status(200).json(totalVisitors);
 }

@@ -17,7 +17,7 @@ export default function ServiceSkeleton({ border }: { border?: boolean }) {
           />
           <Skeleton
             count={2.5}
-            style={{ "margin-top": "1rem" } as React.CSSProperties}
+            style={{ marginTop: "1rem" } as React.CSSProperties}
           />
         </div>
       </div>
