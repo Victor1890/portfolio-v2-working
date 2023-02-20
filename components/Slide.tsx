@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, EffectFade } from "swiper"
 import "swiper/css"
-import Image from "next/image"
+import Image from "next/legacy/image";
 import "swiper/css/effect-fade"
 
 interface Props {

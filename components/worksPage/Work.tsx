@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image";
 import { FaPlus } from "react-icons/fa"
 import { motion } from "framer-motion"
 import { currentWork } from "../../apollo-client"

@@ -5,7 +5,7 @@ import MediaIcons from "./MediaIcons"
 import MyLink from "./MyLink"
 import Slide from "./Slide"
 import Typing from "./Typing"
-import Image from 'next/image'
+import Image from "next/legacy/image";
 
 interface Props {
   profileData: ProfileData
