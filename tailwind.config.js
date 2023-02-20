@@ -2,7 +2,6 @@
 const colors = require("tailwindcss/colors")
 
 module.exports = {
-  // important: true,
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -12,6 +11,10 @@ module.exports = {
       colors: {
         "main-dark": "#111928",
         "main-orange": "#f59e0b",
+        darkPrimary: "#181A1B",
+        darkSecondary: "#111928",
+        darkWhite: "#f2f5fa",
+        "dark-3": "#b8b8b8",
       },
       transitionProperty: {
         width: "width",
@@ -53,5 +56,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui"), require("@tailwindcss/typography")],
+  plugins: [
+    require("daisyui"),
+    require("@tailwindcss/typography")
+  ],
 }

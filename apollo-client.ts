@@ -6,13 +6,14 @@ import {
 } from "@apollo/client"
 import { setContext } from "@apollo/client/link/context"
 import { relayStylePagination } from "@apollo/client/utilities"
+import config from "./config"
 
 const httpLink = createHttpLink({
-  uri: process.env.NEXT_PUBLIC_HYGRAPH_URL,
+  uri: config.apolloClient.uri,
 })
 
 const authLink = setContext((_, { headers }) => {
-  const token = process.env.NEXT_PUBLIC_HYGRAPH_AUTH_TOKEN
+  const token = config.apolloClient.token
   // return the headers to the context so httpLink can read them
   return {
     headers: {

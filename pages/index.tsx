@@ -16,6 +16,7 @@ import WorkLb from "../components/worksPage/WorkLb"
 import SideMenuLb from "../components/SideMenuLb"
 import { BiMenu } from "react-icons/bi"
 import Header from "../components/Header"
+import QRCodeContainer from "../components/QRCodeContainer"
 
 interface Props {
   profileData: ProfileData
@@ -30,6 +31,7 @@ const Home: NextPage<Props> = ({ profileData }) => {
   const menuId = useReactiveVar(currentMenu)
   const workId = useReactiveVar(currentWork)
   const sideMenu = useReactiveVar(showMenu)
+  const [showQR, setShowQR] = useState<boolean>(false);
   const [loaderPage, setLoaderPage] = useState<boolean>(true)
 
   useEffect(() => {
@@ -48,7 +50,9 @@ const Home: NextPage<Props> = ({ profileData }) => {
 
       {loaderPage && <LoaderPage />}
 
-      <Background />
+      <Background showQR={showQR} setShowQR={setShowQR}/>
+
+      <QRCodeContainer showQR={showQR} setShowQR={setShowQR} />
 
       <AnimatePresence>
         {workId && <WorkLb workId={workId} reactiveVar={currentWork} />}

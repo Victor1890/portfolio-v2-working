@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa"
 import { FiSend } from "react-icons/fi"
 import { MdComputer, MdDashboard } from "react-icons/md"
+import { SiGmail } from "react-icons/si"
 import About from "./components/aboutPage/About"
 import DevBlogs from "./components/blogsPage/DevBlogs"
 import Contact from "./components/contactPage/Contact"
@@ -93,6 +94,14 @@ export const socialMedia: SocialMedia[] = [
     logoColor: "#0072b1",
     mediaUrl: "https://www.linkedin.com/in/victor-j-rosario-v/?locale=en_US",
     info: "Let's connect on Linkedin",
+  },
+  {
+    id: 5,
+    Icon: SiGmail,
+    label: "Mail",
+    logoColor: "#EA4335",
+    mediaUrl: "mailto:victorrosariodeveloper@gmail.com",
+    info: "For more info, contact me"
   },
 ]
 
