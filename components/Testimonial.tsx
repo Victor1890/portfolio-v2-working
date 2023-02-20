@@ -13,7 +13,7 @@ export default function Testimonial({ testimonial }: Props) {
       </h3>
       <Image
         src={testimonial.userImage.url}
-        alt="quote user"
+        alt={testimonial.userName}
         width={90}
         height={90}
         objectFit="cover"

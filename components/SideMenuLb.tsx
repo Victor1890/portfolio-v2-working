@@ -42,7 +42,7 @@ export default function SideMenuLb({ sideMenu, showMenu, profile }: Props) {
           <div>
             <Image
               src={profile.ownersPhoto.url}
-              alt="userPic"
+              alt={profile.name}
               objectFit="cover"
               width="125"
               height="125"
