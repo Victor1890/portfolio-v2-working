@@ -40,7 +40,7 @@ export default function MyServices() {
 
   }, [data])
 
-  if(loading || error) {
+  if(error) {
     console.error({ error })
     return <ServicesSkeleton/>
   }

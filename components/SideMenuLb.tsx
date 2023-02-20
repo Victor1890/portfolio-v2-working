@@ -1,5 +1,5 @@
 import { ReactiveVar, useReactiveVar } from "@apollo/client"
-import Image from "next/image"
+import Image from "next/legacy/image";
 import {
   MouseEvent,
 } from "react"
@@ -42,7 +42,7 @@ export default function SideMenuLb({ sideMenu, showMenu, profile }: Props) {
           <div>
             <Image
               src={profile.ownersPhoto.url}
-              alt="userPic"
+              alt={profile.name}
               objectFit="cover"
               width="125"
               height="125"

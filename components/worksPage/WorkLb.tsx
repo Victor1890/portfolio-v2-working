@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image";
 import { MouseEvent } from "react"
 import { AiFillCloseCircle } from "react-icons/ai"
 import { HiOutlineViewGridAdd } from "react-icons/hi"
