@@ -6,9 +6,10 @@ interface Props {
 }
 
 export default function BackEnd({ backend }: Props) {
+  console.log({ backend })
   return (
     <div className="pt-11 pb-4 grid grid-cols-2 gap-y-16 gap-x-10">
-      {backend ? (
+      {backend?.length ? (
         backend.map((b) => (
           <div key={b.id} className="text-center">
             <div
@@ -21,12 +22,13 @@ export default function BackEnd({ backend }: Props) {
             </div>
             <p className="text-2xl text-gray-300 mt-2.5">{b.field}</p>
           </div>
-        ))
+        ))   
       ) : (
         <>
-          {new Array(4).fill(0).map((idx) => (
-            <BackEndSkeleton key={idx}/>
-          ))}
+          <BackEndSkeleton />
+          <BackEndSkeleton />
+          <BackEndSkeleton />
+          <BackEndSkeleton />
         </>
       )}
     </div>

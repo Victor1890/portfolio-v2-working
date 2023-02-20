@@ -21,9 +21,10 @@ export default function Development({ frontend }: Props) {
         ))
       ) : (
         <>
-          {new Array(4).fill(0).map((idx) => (
-            <FrontEndSkeleton key={idx}/>
-          ))}
+          <FrontEndSkeleton />
+          <FrontEndSkeleton />
+          <FrontEndSkeleton />
+          <FrontEndSkeleton />
         </>
       )}
     </div>
