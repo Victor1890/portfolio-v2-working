@@ -30,6 +30,7 @@ export default function ResumeItem({ resume, border }: Props) {
           <Image
             src={resume.logo.url}
             alt={resume.title}
+            title={resume.title}
             width={100}
             height={27}
             objectFit="contain"

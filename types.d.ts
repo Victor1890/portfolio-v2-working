@@ -41,6 +41,7 @@ interface PackageServiceData {
 
 interface ClientData {
   id: number
+  title: string
   linkLocation: string
   imgLocation: string
 }

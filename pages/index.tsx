@@ -45,7 +45,7 @@ const Home: NextPage<Props> = ({ profileData }) => {
     <main className="relative flex items-center justify-center min-h-screen home">
 
       <Header
-        title={`${profileData.name} | Full-stack developer`}
+        title={`${profileData.name} | Full Stack Developer`}
       />
 
       {loaderPage && <LoaderPage />}

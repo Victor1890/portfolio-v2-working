@@ -1,8 +1,8 @@
 import AboutMe from "./AboutMe"
-import BrandLogos from "./BrandLogos"
+// import BrandLogos from "./BrandLogos"
 import Facts from "./Facts"
 import MyServices from "./MyServices"
-import Prices from "./Prices"
+// import Prices from "./Prices"
 import Testimonials from "./Testimonials"
 import Title from "../Title"
 

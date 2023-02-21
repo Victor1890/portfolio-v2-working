@@ -24,7 +24,8 @@ export default function BrandLogo({ client, border, pos }: Props) {
       >
         <Image
           src={client.imgLocation}
-          alt="linkedin"
+          alt={client.title}
+          title={client.title}
           layout="fill"
           objectFit="contain"
           className="opacity-50 transition-all duration-300 hover:opacity-100"

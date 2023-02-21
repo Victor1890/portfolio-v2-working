@@ -58,7 +58,8 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
               />
               <Image
                 src={workData.work.images[0].url}
-                alt="project description"
+                alt={`project ${workData.work.title}`}
+                title={workData.work.title}
                 layout="fill"
                 objectFit="cover"
               />
@@ -149,7 +150,8 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
                 >
                   <Image
                     src={img.url}
-                    alt="project description"
+                    alt={`project ${workData.work.title}`}
+                    title={workData.work.title}
                     layout="fill"
                     objectFit="cover"
                   />

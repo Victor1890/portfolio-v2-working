@@ -6,7 +6,6 @@ interface Props {
 }
 
 export default function BackEnd({ backend }: Props) {
-  console.log({ backend })
   return (
     <div className="pt-11 pb-4 grid grid-cols-2 gap-y-16 gap-x-10">
       {backend?.length ? (

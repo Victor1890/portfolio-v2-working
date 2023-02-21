@@ -14,6 +14,7 @@ export default function Testimonial({ testimonial }: Props) {
       <Image
         src={testimonial.userImage.url}
         alt={testimonial.userName}
+        title={testimonial.userName}
         width={90}
         height={90}
         objectFit="cover"

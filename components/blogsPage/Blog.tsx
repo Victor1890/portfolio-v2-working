@@ -17,7 +17,8 @@ export default function Blog({ blog }: Props) {
         >
           <Image
             src={blog.thumbnail.url}
-            alt="blog"
+            alt={blog.title}
+            title={blog.title}
             objectFit="cover"
             layout="fill"
             className="group-hover:scale-105 transition-all duration-500"

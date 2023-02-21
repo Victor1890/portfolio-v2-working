@@ -43,6 +43,7 @@ export default function SideMenuLb({ sideMenu, showMenu, profile }: Props) {
             <Image
               src={profile.ownersPhoto.url}
               alt={profile.name}
+              title={profile.name}
               objectFit="cover"
               width="125"
               height="125"
@@ -60,10 +61,11 @@ export default function SideMenuLb({ sideMenu, showMenu, profile }: Props) {
                 href={mediaUrl}
                 className="tooltip tooltip-bottom"
                 data-tip={label}
+                title={label}
                 key={id}
                 aria-label={info}
               >
-                <Icon className="text-gray-400 text-2xl transition-all duration-300 hover:text-main-orange" />
+                <Icon title={label} aria-label={info} className="text-gray-400 text-2xl transition-all duration-300 hover:text-main-orange" />
               </a>
             ))}
           </div>

@@ -19,6 +19,7 @@ export default function ProfileCard({ profileData }: Props) {
 
         <div className="relative z-20 w-56 h-56 mx-auto -mt-36 rounded-full profilePic">
           <Image
+            title={profileData.name}
             src={profileData.ownersPhoto.url}
             layout="fill"
             priority

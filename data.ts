@@ -74,7 +74,7 @@ export const socialMedia: SocialMedia[] = [
   {
     id: 1,
     Icon: FaDev,
-    label: "Dev",
+    label: "Dev.to",
     logoColor: "black",
     mediaUrl: "https://dev.to/victor1890",
     info: "Follow me and read my articles on Dev.to",
@@ -108,21 +108,25 @@ export const socialMedia: SocialMedia[] = [
 export const clients: ClientData[] = [
   {
     id: 1,
+    title: "Linkedin",
     linkLocation: "https://www.linkedin.com/",
     imgLocation: "/images/lin.png",
   },
   {
     id: 2,
+    title: "Freelancer",
     linkLocation: "https://www.freelancer.com/",
     imgLocation: "/images/freelancer.png",
   },
   {
     id: 3,
+    title: "UpWork",
     linkLocation: "https://www.upwork.com/",
     imgLocation: "/images/upwork.png",
   },
   {
     id: 4,
+    title: "Envato",
     linkLocation: "https://www.envato.com/",
     imgLocation: "/images/envato.png",
   },
@@ -156,8 +160,24 @@ export const SEO: SeoData = {
   title: "",
   meta: [
     {
+      name: "author",
+      content: "Victor Rosario"
+    },
+    {
+      name: "robots",
+      content: "index,follow"
+    },
+    {
+      name: "keywords",
+      content: "development, developer, backend, frontend, fullstack, Full Stack web development, Full Stack application development, Full Stack software development, Full Stack development framework, Full Stack development tools, Full Stack development portfolio, Full Stack development best practices, Full Stack development services, Frontend development, Backend development, Web development, Mobile development, Cross-platform development, Responsive design, Server-side scripting, Database management, API design and development, Testing and debugging, Continuous integration and delivery, Version control, Agile development methodologies, Cloud computing, DevOps, Scalability and performance optimization, Technologist, Technological Institute of the Americas (ITLA), FullStack Developer, JavaScript, TypeScript, Node, Node.js, PL / SQL, API REST, Blockchain technologies, Redis, Docker, WebSocket, Socket.io"
+    },
+    {
+      name: "title",
+      content: "Victor Rosario | Full Stack Developer",
+    },
+    {
       name: "og:title",
-      content: "Victor Rosario | Full-stack developer",
+      content: "Victor Rosario | Full Stack Developer",
     },
     {
       name: "description",

@@ -73,8 +73,9 @@ export default function QRCodeContainer({ showQR, setShowQR}: Props) {
                 color={"rgba(225, 225, 225, 0.2)"}
               >
                 <button
-                  className="w-full px-6 py-5 text-sm font-medium text-white rounded bg-darkPrimary dark:bg-gray-100 dark:text-darkPrimary scale-150"
                   onClick={downloadQRCode}
+                  title="Download QRCode"
+                  className="w-full px-6 py-5 text-sm font-medium text-white rounded bg-darkPrimary dark:bg-gray-100 dark:text-darkPrimary scale-150"
                 >
                   Download
                 </button>

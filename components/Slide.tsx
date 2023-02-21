@@ -25,6 +25,7 @@ export default function Slide({ images }: Props) {
               <Image
                 src={img.url}
                 alt="tour"
+                title="tour"
                 layout="fill"
                 objectFit="cover"
                 priority

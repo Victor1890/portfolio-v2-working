@@ -28,10 +28,12 @@ export default function MyResume() {
     const experience: ExperienceData[] = [];
     const education: ExperienceData[] = [];
 
-    data.resumes.forEach((r) => {
+    const resumes = [...data.resumes].sort((a,b) => Number(b.badge.split(" ")[0]) - Number(a.badge.split(" ")[0]))
+
+    resumes.forEach((r) => {
       if (r.experience) experience.push(r);
       else education.push(r);
-    })
+    });
 
     return {
        education,

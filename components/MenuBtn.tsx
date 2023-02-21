@@ -23,7 +23,7 @@ export default function MenuBtn({
         active ? "text-main-orange" : "text-gray-300"
       }`}
     >
-      <menu.Icon className="text-[2rem] transition-all duration-300 group-hover:text-main-orange" />
+      <menu.Icon title={menu.label} aria-label={menu.label} className="text-[2rem] transition-all duration-300 group-hover:text-main-orange" />
       <p className="uppercase text-base font-medium transition-all duration-300 group-hover:text-main-orange">
         {menu.label}
       </p>
