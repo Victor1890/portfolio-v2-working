@@ -114,7 +114,7 @@ const Background: NextPage<Props> = ({ setShowQR, showQR }) => {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { delay: 0.2 } },
           }}
-          className="fixed z-40 flex items-center justify-center text-white rounded-full bottom-6 right-6 w-14 h-14"
+          className="fixed z-50 flex items-center justify-center text-white rounded-full bottom-6 right-6 w-14 h-14"
         >
           <div
             onClick={() => setShowQR(!showQR)}

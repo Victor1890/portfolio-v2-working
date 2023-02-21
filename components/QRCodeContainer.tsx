@@ -28,8 +28,9 @@ export default function QRCodeContainer({ showQR, setShowQR}: Props) {
       downloadLink.href = `${pngFile}`;
       downloadLink.click();
     };
-    img.src = `data:image/svg+xml;base64,${btoa(svgData)}`;
+    img.src = `data:image/svg+xml;base64,${Buffer.from(svgData, 'base64')}`;
   }
+
   return (
     <>
       <AnimatePresence>
@@ -60,7 +61,7 @@ export default function QRCodeContainer({ showQR, setShowQR}: Props) {
             </button>
 
             <div className="flex flex-col gap-2 text-black dark:text-white">
-              <h1 className="text-5xl md:text-3xl font-semibold">Share this page</h1>
+              <h1 className="text-5xl md:text-3xl font-semibold py-5">Share this page</h1>
               <QRCode
                 id="QRCode"
                 value={currentURL}

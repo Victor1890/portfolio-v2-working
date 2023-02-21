@@ -19,9 +19,7 @@ const nextConfig = {
     localeDetection: false
   },
   compiler: {
-    // removeConsole: {
-    //   exclude: ['error'],
-    // },
+    removeConsole: process.env.NODE_ENV == 'production'
   },
   webpack: (config, { isServer }) => {
     
