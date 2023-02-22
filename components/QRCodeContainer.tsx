@@ -28,7 +28,7 @@ export default function QRCodeContainer({ showQR, setShowQR}: Props) {
       downloadLink.href = `${pngFile}`;
       downloadLink.click();
     };
-    img.src = `data:image/svg+xml;base64,${Buffer.from(svgData, 'base64')}`;
+    img.src = `data:image/svg+xml;base64,${btoa(svgData)}`;
   }
 
   return (
