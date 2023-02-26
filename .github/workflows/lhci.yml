@@ -1,5 +1,8 @@
 name: Lighthouse CI
-on: [push]
+on: 
+  release:
+    types:
+      - "published"
 jobs:
   lighthouseci:
     name: Lighthouse CI
