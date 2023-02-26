@@ -9,14 +9,14 @@ interface ProfileData {
 }
 
 interface SeoData {
-  title: string
+  title?: string
   meta: MetaSeoData[]
 }
 
 interface MetaSeoData {
-  name?: string,
-  property?: string
+  name: string,
   content: string
+  key?: string
 }
 
 interface partOfProfile {

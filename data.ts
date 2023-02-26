@@ -157,7 +157,6 @@ export const statisticsData: StatisticsData[] = [
 ]
 
 export const SEO: SeoData = {
-  title: "",
   meta: [
     {
       name: "author",
@@ -165,7 +164,11 @@ export const SEO: SeoData = {
     },
     {
       name: "robots",
-      content: "index,follow"
+      content: "all"
+    },
+    {
+      name: "googlebot",
+      content: "all"
     },
     {
       name: "keywords",
@@ -176,19 +179,23 @@ export const SEO: SeoData = {
       content: "Victor Rosario | Full Stack Developer",
     },
     {
-      name: "og:title",
-      content: "Victor Rosario | Full Stack Developer",
-    },
-    {
       name: "description",
       content: "A Technologist, I graduated from the Technological Institute of the Americas (ITLA) currently I work as a FullStack Developer, making use of different software such as JavaScript, TypeScript, Node.js, PL / SQL, API REST, blockchain technologies, Redis, Docker, WebSocket, Socket.io and more.",
     },
     {
-      property: "og:description",
+      name: "og:title",
+      content: "Victor Rosario | Full Stack Developer",
+    },
+    {
+      name: "og:site_name",
+      content: "Victor Rosario | Full Stack Developer",
+    },
+    {
+      name: "og:description",
       content: "A Technologist, I graduated from the Technological Institute of the Americas (ITLA) currently I work as a FullStack Developer, making use of different software such as JavaScript, TypeScript, Node.js, PL / SQL, API REST, blockchain technologies, Redis, Docker, WebSocket, Socket.io and more.",
     },
     {
-      property: "og:type",
+      name: "og:type",
       content: "website",
     },
   ]

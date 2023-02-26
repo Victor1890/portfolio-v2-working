@@ -1,6 +1,6 @@
 import AboutMe from "./AboutMe"
 // import BrandLogos from "./BrandLogos"
-import Facts from "./Facts"
+// import Facts from "./Facts"
 import MyServices from "./MyServices"
 // import Prices from "./Prices"
 import Testimonials from "./Testimonials"
@@ -24,8 +24,8 @@ export default function About() {
       <Title name="testimonials" />
       <Testimonials />
 
-      <Title name="fun facts" />
-      <Facts />
+      {/* <Title name="fun facts" />
+      <Facts /> */}
     </section>
   )
 }

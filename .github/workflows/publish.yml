@@ -1,0 +1,23 @@
+name: "🚀 Publish"
+
+on:
+  release:
+    types:
+      - "published"
+
+jobs:
+  release:
+    name: "🚀 publish"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.3.0
+      - name: "Package Update"
+        uses: taichi/actions-package-update@master
+        env:
+          AUTHOR_EMAIL: victorrosariodeveloper@gmail.com
+          AUTHOR_NAME: "Victor Rosario"
+          EXECUTE: "true"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LOG_LEVEL: debug
+        with:
+          args: -u --packageFile package.json --loglevel verbose

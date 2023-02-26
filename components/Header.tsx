@@ -15,7 +15,7 @@ export default function Header ({ title, meta = [] }: Props) {
         <Head>
             <title>{title}</title>
             {[...SEO.meta, ...meta].map((item, index) => (
-                <meta key={index} name={ item.property ? item.property : item.name } content={`${item.content}`}/>
+                <meta key={index} name={item.name} content={`${item.content}`}/>
             ))}
             <meta name="og:url" content={currentURL}/>
             <link rel="icon" href="/favicon.ico" />
