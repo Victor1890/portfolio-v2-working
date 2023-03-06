@@ -30,7 +30,7 @@ export default async function handler(_: NextApiRequest, res: NextApiResponse) {
     ],
     metrics: [
       {
-        name: "activeUsers", // it returs the active users
+        name: "activeUsers", // it returns the active users
       },
     ],
   });

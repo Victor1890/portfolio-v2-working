@@ -4,6 +4,7 @@ import guestBookOperations from "../../graphqlOperations/guestBook"
 import { guestBooksConnection } from "../../types"
 import Loader from "../Loader"
 import { motion } from "framer-motion"
+import { formateDate } from "../../helpers/fortmate-date.helper"
 
 interface CommentsVariables {
   after?: string
@@ -12,20 +13,6 @@ interface CommentsVariables {
 
 interface CommentsQuery {
   guestBooksConnection: guestBooksConnection
-}
-
-function formateDate(d: Date) {
-  let date = new Date(d)
-  let formattedDate = date.toLocaleString("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true,
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  })
-
-  return formattedDate
 }
 
 export default function GuestComments() {
@@ -78,7 +65,7 @@ export default function GuestComments() {
               </h3>
               <time
                 className="hidden text-xl text-gray-600 sm:block"
-                dateTime="1785-12-30"
+                dateTime={d.node.createdAt.toLocaleDateString()}
               >
                 {formateDate(d.node.createdAt)}
               </time>

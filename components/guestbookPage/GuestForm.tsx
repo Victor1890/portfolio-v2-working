@@ -1,5 +1,5 @@
 import { gql, useMutation } from "@apollo/client"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { toast } from "react-hot-toast"
 import { AiOutlineSwapRight } from "react-icons/ai"
@@ -72,6 +72,10 @@ export default function GuestForm() {
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     createComment({ variables: data })
   }
+
+  useEffect(() => {
+    if(isChecked) setGuestName(localStorage.getItem("portfolio_guestName") || "")
+  }, [JSON.stringify(isChecked)])
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
