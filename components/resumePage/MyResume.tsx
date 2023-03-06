@@ -49,7 +49,7 @@ export default function MyResume() {
       <li className="py-8 px-12">
         <IconTitle title="experience" Icon={FaNetworkWired} />
 
-        {filteredData === undefined ? (
+        {!filteredData ? (
           <>
             <ResumeSkeleton border />
             <ResumeSkeleton border />

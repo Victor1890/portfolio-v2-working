@@ -4,7 +4,7 @@ export default {
   Queries: {
     getExperience: gql`
       query GetExperience {
-        resumes {
+        resumes(last: 10) {
           badge
           desc
           experience
