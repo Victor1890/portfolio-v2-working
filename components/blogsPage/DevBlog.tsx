@@ -27,7 +27,7 @@ export default function Blog({ blog }: Props) {
         <h2
           className={`text-main-orange border-main-orange mt-7 border border-solid text-xl py-0.5 px-3 tracking-wide inline-block relative left-1/2 -translate-x-1/2`}
         >
-          {new Date(blog.created_at).toLocaleDateString()}
+          {new Date(blog.created_at || new Date()).toLocaleDateString()}
         </h2>
         <a
           rel="noreferrer"

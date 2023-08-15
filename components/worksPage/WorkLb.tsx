@@ -69,7 +69,7 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
                 {workData.work.title}
 
                 <div className="flex items-center gap-x-4">
-                  <a
+                  {workData.work.workUrl && <a
                     rel="noreferrer"
                     href={workData.work.workUrl}
                     target="_blank"
@@ -77,9 +77,9 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
                   >
                     view
                     <HiOutlineViewGridAdd className="text-3xl" />
-                  </a>
+                  </a>}
 
-                  <a
+                  {workData.work.githubUrl && <a
                     rel="noreferrer"
                     href={workData.work.githubUrl}
                     target="_blank"
@@ -87,38 +87,36 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
                   >
                     github
                     <BsGithub className="text-3xl" />
-                  </a>
+                  </a>}
+                  
                 </div>
               </div>
-              <p className="text-xl tracking-wide text-gray-400 capitalize">
-                project
-              </p>
 
               <ul className="grid grid-cols-1 mt-10 sm:grid-cols-2 gap-y-2">
-                <MyInfo field="created by" value={workData.work.ownerName} />
+                {workData.work.ownerName && <MyInfo field="created by" value={workData.work.ownerName} />}
                 <MyInfo
                   field="date"
-                  value={new Date(workData.work.date).toLocaleDateString()}
+                  value={new Date(workData.work.date || Date.now()).toLocaleDateString()}
                 />
-                <MyInfo field="client" value={workData.work.clientName} />
-                <MyInfo field="categories" value="Project" />
+                {workData.work.clientName && <MyInfo field="client" value={workData.work.clientName} />}
+                {/* <MyInfo field="categories" value="Project" /> */}
               </ul>
 
-              <article className="my-10 prose max-w-none">
+              {workData.work.description && <article className="my-10 prose max-w-none">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
                   {workData.work.description}
                 </ReactMarkdown>
-              </article>
+              </article>}
 
-              {workData.work.techStack.length &&
-                workData.work.userActions.length && (
+              {workData.work.techStack?.length &&
+                workData.work.userActions?.length && (
                   <div className="grid grid-cols-1 sm:grid-cols-3 mb-10 gap-2 text-gray-300 text-[1.4rem] tech-func">
                     <div className="mb-6 sm:mb-0">
                       <h1 className="mb-4 text-2xl font-semibold text-gray-200 capitalize">
                         tech-stack
                       </h1>
                       <ul className="flex flex-col gap-y-2">
-                        {workData.work.techStack.map((t, idx) => (
+                        {(workData.work?.techStack || []).map((t, idx) => (
                           <li key={idx} className="flex gap-2">
                             {t}
                           </li>

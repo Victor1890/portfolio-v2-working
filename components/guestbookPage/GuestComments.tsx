@@ -65,9 +65,9 @@ export default function GuestComments() {
               </h3>
               <time
                 className="hidden text-xl text-gray-600 sm:block"
-                dateTime={d.node.createdAt.toLocaleDateString()}
+                dateTime={new Date(d.node.createdAt || new Date()).toLocaleDateString()}
               >
-                {formateDate(d.node.createdAt)}
+                {formateDate(new Date(d.node.createdAt || new Date()))}
               </time>
             </div>
             <p className="mt-4 text-2xl tracking-wider text-gray-400">

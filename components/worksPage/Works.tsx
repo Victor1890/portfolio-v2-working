@@ -22,7 +22,7 @@ interface WorksVariables {
 
 export default function Works() {
   const currentTab = useReactiveVar(currentWorkTab)
-  const [isOpen, setIsOpen] = useState<string | null>(null)
+
   const {
     data: worksData,
     error: worksError,
@@ -32,18 +32,18 @@ export default function Works() {
   })
 
   const filteredWorks = useMemo(() => {
-    if (worksData === undefined) return
+    if (!worksData) return;
     return worksData.worksConnection.edges.filter((w) =>
       w.node.workTabs.some((t) => t.tab === currentTab)
     )
   }, [worksData, currentTab])
 
   if (worksError) {
-    console.log(worksError.toString())
+    console.error(worksError.toString())
     return <WorksSkeleton />
   }
 
-  if (worksData === undefined) return <WorksSkeleton />
+  if (!worksData) return <WorksSkeleton />
 
   return (
     <div
